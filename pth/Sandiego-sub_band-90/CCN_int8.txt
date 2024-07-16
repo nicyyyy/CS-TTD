@@ -1,0 +1,44 @@
+Model Structure:
+CombineCov_Net(
+  (Conv): ModuleList(
+    (0-1): 2 x CombineCov(
+      (Conv1): Sequential(
+        (0): Conv1d(2, 1, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=0.01)
+      )
+      (Conv2): Sequential(
+        (0): Conv1d(2, 1, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=0.01)
+      )
+    )
+  )
+  (MLP): Sequential(
+    (0): Linear(in_features=36, out_features=18, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Linear(in_features=18, out_features=9, bias=True)
+    (3): LeakyReLU(negative_slope=0.01)
+    (4): Linear(in_features=9, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+)
+
+Model Parameters:
+Conv.0.Conv1.0.weight: torch.Size([1, 2, 3])
+Conv.0.Conv1.0.bias: torch.Size([1])
+Conv.0.Conv2.0.weight: torch.Size([1, 2, 3])
+Conv.0.Conv2.0.bias: torch.Size([1])
+Conv.1.Conv1.0.weight: torch.Size([1, 2, 3])
+Conv.1.Conv1.0.bias: torch.Size([1])
+Conv.1.Conv2.0.weight: torch.Size([1, 2, 3])
+Conv.1.Conv2.0.bias: torch.Size([1])
+MLP.0.weight: torch.Size([18, 36])
+MLP.0.bias: torch.Size([18])
+MLP.2.weight: torch.Size([9, 18])
+MLP.2.bias: torch.Size([9])
+MLP.4.weight: torch.Size([1, 9])
+MLP.4.bias: torch.Size([1])
+
+Model Computational Graph:
+None

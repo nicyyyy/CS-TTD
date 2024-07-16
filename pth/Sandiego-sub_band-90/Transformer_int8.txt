@@ -1,0 +1,46 @@
+Model Structure:
+TransformerEncoder(
+  (layers): ModuleList(
+    (0-1): 2 x TransformerEncoderLayer(
+      (self_attn): MultiHeadSelfAttention(
+        (linear_q): Linear(in_features=18, out_features=18, bias=True)
+        (linear_k): Linear(in_features=18, out_features=18, bias=True)
+        (linear_v): Linear(in_features=18, out_features=18, bias=True)
+        (quant): QuantStub()
+        (dequant): DeQuantStub()
+      )
+      (feedforward): Feedforward(
+        (linear1): Linear(in_features=18, out_features=64, bias=True)
+        (relu): LeakyReLU(negative_slope=0.01)
+        (linear2): Linear(in_features=64, out_features=18, bias=True)
+      )
+    )
+  )
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+)
+
+Model Parameters:
+layers.0.self_attn.linear_q.weight: torch.Size([18, 18])
+layers.0.self_attn.linear_q.bias: torch.Size([18])
+layers.0.self_attn.linear_k.weight: torch.Size([18, 18])
+layers.0.self_attn.linear_k.bias: torch.Size([18])
+layers.0.self_attn.linear_v.weight: torch.Size([18, 18])
+layers.0.self_attn.linear_v.bias: torch.Size([18])
+layers.0.feedforward.linear1.weight: torch.Size([64, 18])
+layers.0.feedforward.linear1.bias: torch.Size([64])
+layers.0.feedforward.linear2.weight: torch.Size([18, 64])
+layers.0.feedforward.linear2.bias: torch.Size([18])
+layers.1.self_attn.linear_q.weight: torch.Size([18, 18])
+layers.1.self_attn.linear_q.bias: torch.Size([18])
+layers.1.self_attn.linear_k.weight: torch.Size([18, 18])
+layers.1.self_attn.linear_k.bias: torch.Size([18])
+layers.1.self_attn.linear_v.weight: torch.Size([18, 18])
+layers.1.self_attn.linear_v.bias: torch.Size([18])
+layers.1.feedforward.linear1.weight: torch.Size([64, 18])
+layers.1.feedforward.linear1.bias: torch.Size([64])
+layers.1.feedforward.linear2.weight: torch.Size([18, 64])
+layers.1.feedforward.linear2.bias: torch.Size([18])
+
+Model Computational Graph:
+None
