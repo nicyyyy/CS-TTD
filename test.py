@@ -48,7 +48,7 @@ def test(modelConfig):
     elapsed_time = end_time - start_time
     print(f"代码运行时间为：{elapsed_time} 秒/n")
     Pred_img, PF, PD, threshold, AUC_list = save_test_results(Pred.detach().view(Pred.shape[0]), gt, modelConfig, device)
-    
+
     return
 
 
