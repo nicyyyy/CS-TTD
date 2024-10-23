@@ -7,9 +7,9 @@ Triplet Transformer for Compressive Hyperspectral Target Detection
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={CS-TTD: Triplet Transformer for Compressive Hyperspectral Target Detection}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
-  pages={1-1},
+  pages={1-15},
   doi={10.1109/TGRS.2024.3436084}}
 ```
 
